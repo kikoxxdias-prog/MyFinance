@@ -1,0 +1,25 @@
+MYFINANCE — PACOTE PWA
+
+Conteúdo:
+- index.html: aplicação MyFinance
+- manifest.json: configuração para instalação
+- sw.js: cache offline
+- icon-192.png e icon-512.png: ícones
+
+IMPORTANTE:
+Este pacote ainda precisa de ser alojado num endereço HTTPS para poder ser instalado como PWA no iPhone. O pacote não publica automaticamente a aplicação.
+
+Instalação no iPhone:
+1. Publica o conteúdo desta pasta num alojamento HTTPS (por exemplo, GitHub Pages ou Netlify).
+2. Abre o endereço HTTPS no Safari do iPhone.
+3. Toca em Partilhar > Adicionar ao ecrã principal.
+4. Abre a MyFinance pelo novo ícone.
+
+Privacidade:
+- Os movimentos são guardados no localStorage do navegador, no próprio dispositivo e na origem HTTPS onde a aplicação estiver alojada.
+- Não existe sincronização nem conta.
+- Se limpares os dados do Safari ou removeres os dados do site, podes perder os registos.
+- Usa Definições > Exportar cópia de segurança regularmente.
+- A cópia JSON contém os teus dados financeiros; guarda-a num local privado.
+
+Para transferir os dados entre origens/dispositivos, usa Exportar cópia e Importar cópia dentro da aplicação.
