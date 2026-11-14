@@ -1,7 +1,7 @@
 {
-  "name": "MyFinance 4.0.1 — Fundação",
-  "short_name": "MyFinance",
-  "description": "Gestor financeiro pessoal privado",
+  "name": "MyFinance 4.0.2 — Teste Isolado",
+  "short_name": "MF 4.0.2",
+  "description": "Versão de teste isolada da MyFinance 2.1.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

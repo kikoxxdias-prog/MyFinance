@@ -1,0 +1,9 @@
+MYFINANCE 4.0.2 — TESTE ISOLADO
+
+- Não substitui a MyFinance 2.1.
+- Mantém armazenamento separado: myfinance_v4_test / MyFinanceLocalTest.
+- Não tem registo de cartões nem ligação bancária.
+- Não exige criação de várias contas.
+- Saldo total estimado = rendimentos menos despesas pagas registadas nesta versão.
+- Os movimentos de poupança são tratados como afetação de dinheiro e não alteram o saldo total estimado.
+- Mantém a cópia de segurança da aplicação principal intacta.
