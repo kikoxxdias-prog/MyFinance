@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-PT"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0b1020"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="icon-192.png"><title>MyFinance 4.0.3 — TESTE ISOLADO</title>
+<html lang="pt-PT"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0b1020"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="icon-192.png"><title>MyFinance 4.0.4 — TESTE ISOLADO</title>
 <style>
 :root{--bg:#0b1020;--p:#131d30;--p2:#1b2940;--line:#2a3850;--t:#f4f7fb;--m:#95a3b8;--g:#39d6a2;--r:#fb7185;--y:#fbbf24}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--t);font:15px -apple-system,BlinkMacSystemFont,Arial;padding-bottom:90px}header{position:sticky;top:0;background:#0b1020ee;backdrop-filter:blur(12px);padding:calc(16px + env(safe-area-inset-top)) 18px 14px;border-bottom:1px solid var(--line);z-index:5;display:flex;justify-content:space-between;align-items:center}.brand{font-weight:800;font-size:19px}.brand span{color:var(--g)}main{max-width:720px;margin:auto;padding:18px 15px}.view{display:none}.view.on{display:block}.muted{color:var(--m)}.eyebrow{font-size:11px;color:var(--m);text-transform:uppercase;letter-spacing:1px;font-weight:700}h2{margin:5px 0 16px;font-size:24px}.card,.kpi{background:var(--p);border:1px solid var(--line);border-radius:17px;padding:16px;margin-bottom:12px}.hero{background:linear-gradient(130deg,#16423c,#172b45);border-color:#28695e}.hero strong{display:block;font-size:34px;margin:8px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.kpi small{color:var(--m)}.kpi b{display:block;font-size:20px;margin-top:8px}.green{color:var(--g)}.red{color:var(--r)}label{display:block;color:var(--m);font-size:12px;margin:13px 0 6px}input,select{width:100%;background:#0d1627;color:var(--t);border:1px solid var(--line);border-radius:11px;padding:13px;font:inherit}button{font:inherit}.primary{width:100%;border:0;border-radius:12px;background:var(--g);color:#06271f;font-weight:800;padding:14px;margin-top:15px}.secondary{background:var(--p2);border:1px solid var(--line);color:var(--t);padding:10px 12px;border-radius:11px}.pills{display:flex;gap:7px;overflow:auto}.pill{border:1px solid var(--line);border-radius:30px;background:var(--p2);color:var(--m);padding:8px 13px;white-space:nowrap}.pill.on{color:var(--g);border-color:var(--g)}.row{display:flex;align-items:center;gap:10px;padding:11px 0;border-bottom:1px solid var(--line)}.row:last-child{border:0}.ico{width:38px;height:38px;background:var(--p2);border-radius:12px;display:grid;place-items:center}.grow{flex:1;min-width:0}.grow b{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.grow small{color:var(--m);font-size:11px}.amt{font-weight:750;text-align:right;white-space:nowrap}.section{display:flex;justify-content:space-between;align-items:center;margin:21px 2px 10px}.section h3{font-size:15px;margin:0}.link{background:none;border:0;color:var(--g);font-weight:700}.bar{height:8px;background:#29364c;border-radius:20px;overflow:hidden;margin:9px 0}.bar i{display:block;height:100%;background:var(--g)}.empty{text-align:center;color:var(--m);padding:22px 8px;font-size:13px}.bottom{position:fixed;bottom:0;left:0;right:0;background:#111b2cee;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(6,1fr);padding:8px 4px calc(8px + env(safe-area-inset-bottom));z-index:6}.nav{border:0;background:none;color:var(--m);font-size:10px;display:grid;gap:3px;justify-items:center}.nav b{font-size:20px}.nav.on{color:var(--g)}.twocol{display:grid;grid-template-columns:1fr 1fr;gap:10px}.danger{color:var(--r)}.toast{position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:#d9fff2;color:#073a2c;padding:11px 16px;border-radius:30px;display:none;z-index:10;font-weight:700}
 
@@ -56,8 +56,20 @@ main{padding:19px 15px 28px}.premium-head{display:flex;align-items:end;justify-c
 <nav class="bottom"><button class="nav on" data-page="home" onclick="page('home')"><b>⌂</b>Início</button><button class="nav" data-page="history" onclick="page('history')"><b>⇄</b>Movimentos</button><button class="nav" data-page="add" onclick="page('add')"><b>＋</b>Adicionar</button><button class="nav" data-page="budget" onclick="page('budget')"><b>▤</b>Orçamento</button><button class="nav" data-page="goals" onclick="page('goals')"><b>♧</b>Poupanças</button><button class="nav" data-page="calendar" onclick="page('calendar')"><b>▦</b>Calendário</button></nav><div class="toast" id="toast"></div>
 <script>
 const KEY='myfinance_v4_test',DB_NAME='MyFinanceLocalTest',DB_VERSION=1,STORE='finance',cats=['Alimentação','Supermercado','Restaurantes e cafés','Habitação','Transportes','Combustível','Automóvel','Saúde','Farmácia','Tecnologia','Telemóvel e Internet','Subscrições','Entretenimento','Gaming','Roupa e calçado','Cuidados pessoais','Viagens','Presentes','Formação','Salário','Subsídios','Rendimentos adicionais','Outros'];
-let db=JSON.parse(localStorage.getItem(KEY)||'{"moves":[],"budgets":{},"goals":[],"recurring":[]}'),type='Despesa',idb=null,idbReady=false;db.recurring=Array.isArray(db.recurring)?db.recurring:[];
-const $=id=>document.getElementById(id),eur=n=>new Intl.NumberFormat('pt-PT',{style:'currency',currency:'EUR'}).format(n||0),today=()=>{let d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')},month=()=>today().slice(0,7),save=()=>{const snapshot=JSON.stringify(db);localStorage.setItem(KEY,snapshot);if(idbReady&&idb){try{const tx=idb.transaction(STORE,'readwrite');tx.objectStore(STORE).put({id:'main',data:snapshot,updatedAt:new Date().toISOString()})}catch(e){console.warn('IndexedDB mirror failed',e)}}},sum=a=>a.reduce((s,x)=>s+(+x.amount||0),0),esc=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let db=JSON.parse(localStorage.getItem(KEY)||'{"moves":[],"budgets":{},"goals":[],"recurring":[]}'),type='Despesa',idb=null,idbReady=false;
+db.recurring=Array.isArray(db.recurring)?db.recurring:[];
+const $=id=>document.getElementById(id),eur=n=>new Intl.NumberFormat('pt-PT',{style:'currency',currency:'EUR'}).format(n||0),today=()=>{let d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')},month=()=>today().slice(0,7);
+function save(){
+ const snapshot=JSON.stringify(db);
+ localStorage.setItem(KEY,snapshot);
+ if(idbReady&&idb){
+  try{
+   const tx=idb.transaction(STORE,'readwrite');
+   tx.objectStore(STORE).put({id:'main',data:snapshot,updatedAt:new Date().toISOString()});
+  }catch(e){console.warn('IndexedDB mirror failed',e)}
+ }
+}
+const sum=a=>a.reduce((s,x)=>s+(+x.amount||0),0),esc=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function toast(s){$('toast').textContent=s;$('toast').style.display='block';setTimeout(()=>$('toast').style.display='none',2100)}
 function fill(id,arr,first=''){ $(id).innerHTML=(first?'<option value="">'+first+'</option>':'')+arr.map(x=>'<option>'+esc(x)+'</option>').join('') }
 function setType(t){type=t;document.querySelectorAll('[data-t]').forEach(b=>b.classList.toggle('on',b.dataset.t===t));$('kindBox').style.display=t==='Despesa'?'block':'none';$('goalBox').style.display=t==='Poupança'?'block':'none';fill('cat',t==='Rendimento'?['Salário','Subsídios','Rendimentos adicionais','Outros']:t==='Poupança'?['Poupança']:cats);fill('goal',db.goals.map(g=>g.name),'Selecionar objetivo')}
@@ -96,14 +108,14 @@ function occurrences(rule,ym){
  let [yy,mm]=ym.split('-').map(Number),start=dateParts(rule.start),end=new Date(yy,mm,0,12),out=[];
  if(rule.frequency==='monthly'){
   let d=new Date(yy,mm-1,Math.min(start.getDate(),new Date(yy,mm,0).getDate()),12);
-  if(d>=start&&d<=end)out.push(d.toISOString().slice(0,10));
+  if(d>=start&&d<=end)out.push(d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'));
  }else if(rule.frequency==='yearly'){
   let d=new Date(yy,start.getMonth(),Math.min(start.getDate(),new Date(yy,start.getMonth()+1,0).getDate()),12);
-  if(d>=start&&d<=end)out.push(d.toISOString().slice(0,10));
+  if(d>=start&&d<=end)out.push(d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'));
  }else{
   let d=new Date(start);
   while(d<new Date(yy,mm-1,1,12))d.setDate(d.getDate()+7);
-  while(d<=end){out.push(d.toISOString().slice(0,10));d.setDate(d.getDate()+7)}
+  while(d<=end){out.push(d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'));d.setDate(d.getDate()+7)}
  }
  return out;
 }
@@ -134,44 +146,44 @@ function backup(){let a=document.createElement('a'),u=URL.createObjectURL(new Bl
 function restore(e){let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{let x=JSON.parse(r.result);if(!Array.isArray(x.moves)||!x.budgets||!Array.isArray(x.goals))throw 0;x.recurring=Array.isArray(x.recurring)?x.recurring:[];db=x;save();setType(type);render();toast('Cópia restaurada.')}catch(_){toast('Cópia inválida.')}};r.readAsText(f)}
 function clearAll(){if(confirm('Apagar permanentemente os dados deste navegador?')){db={moves:[],budgets:{},goals:[],recurring:[]};save();render();toast('Dados apagados.')}}
 async function initLocalDatabase(){
-  const fallback='{"moves":[],"budgets":{},"goals":[]}';
-  const localSnapshot=localStorage.getItem(KEY)||fallback;
-  try{
-    idb=await new Promise((resolve,reject)=>{
-      const req=indexedDB.open(DB_NAME,DB_VERSION);
-      req.onupgradeneeded=()=>{const d=req.result;if(!d.objectStoreNames.contains(STORE))d.createObjectStore(STORE,{keyPath:'id'})};
-      req.onsuccess=()=>resolve(req.result);
-      req.onerror=()=>reject(req.error||new Error('IndexedDB indisponível'));
-    });
-    const saved=await new Promise((resolve,reject)=>{
-      const req=idb.transaction(STORE,'readonly').objectStore(STORE).get('main');
-      req.onsuccess=()=>resolve(req.result||null);req.onerror=()=>reject(req.error);
-    });
-    if(saved&&saved.data){
-      const parsed=JSON.parse(saved.data);
-      if(Array.isArray(parsed.moves)&&parsed.budgets&&Array.isArray(parsed.goals)) db=parsed;
-      else throw new Error('Dados IndexedDB inválidos');
-    }else{
-      const parsed=JSON.parse(localSnapshot);
-      if(Array.isArray(parsed.moves)&&parsed.budgets&&Array.isArray(parsed.goals)) db=parsed;
-      const tx=idb.transaction(STORE,'readwrite');
-      tx.objectStore(STORE).put({id:'main',data:JSON.stringify(db),updatedAt:new Date().toISOString()});
-    }
-    idbReady=true;
-    // Keep a compatibility copy so the current backup/export workflow and older build remain recoverable.
-    localStorage.setItem(KEY,JSON.stringify(db));
-    return 'IndexedDB ativo; cópia compatível preservada.';
-  }catch(err){
-    console.warn('IndexedDB migration unavailable; keeping localStorage',err);
-    idbReady=false;
-    db=JSON.parse(localSnapshot);
-    return 'Armazenamento local compatível ativo.';
+ const fallback={moves:[],budgets:{},goals:[],recurring:[]};
+ let localData=fallback;
+ try{
+  const raw=localStorage.getItem(KEY);
+  if(raw){
+   const parsed=JSON.parse(raw);
+   if(Array.isArray(parsed.moves)&&parsed.budgets&&Array.isArray(parsed.goals)){
+    localData=parsed;
+    localData.recurring=Array.isArray(localData.recurring)?localData.recurring:[];
+   }
   }
+ }catch(e){console.warn('Local data could not be parsed',e)}
+ db=localData;
+ try{
+  idb=await new Promise((resolve,reject)=>{
+   const req=indexedDB.open(DB_NAME,DB_VERSION);
+   req.onupgradeneeded=()=>{const d=req.result;if(!d.objectStoreNames.contains(STORE))d.createObjectStore(STORE,{keyPath:'id'})};
+   req.onsuccess=()=>resolve(req.result);
+   req.onerror=()=>reject(req.error||new Error('IndexedDB unavailable'));
+  });
+  idbReady=true;
+  // Synchronize IndexedDB from the authoritative localStorage snapshot.
+  await new Promise((resolve,reject)=>{
+   const tx=idb.transaction(STORE,'readwrite');
+   tx.objectStore(STORE).put({id:'main',data:JSON.stringify(db),updatedAt:new Date().toISOString()});
+   tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error);tx.onabort=()=>reject(tx.error||new Error('IndexedDB transaction aborted'));
+  });
+ }catch(err){
+  console.warn('IndexedDB mirror unavailable; localStorage remains authoritative',err);
+  idbReady=false;
+ }
+ localStorage.setItem(KEY,JSON.stringify(db));
+ return 'Dados locais carregados; localStorage é a fonte principal.';
 }
 (async()=>{
   const status=await initLocalDatabase();
   $('month').value=month();$('filterMonth').value=month();$('date').value=today();
   fill('cat',cats);fill('budgetCat',cats);fill('recCat',cats);$('recStart').value=today();$('calendarMonth').value=month();setType('Despesa');render();
-  console.info('MyFinance 4.0.1 foundation:',status);
+  console.info('MyFinance 4.0.4 storage:',status);
 })();
 </script><script>if("serviceWorker" in navigator && location.protocol!=="file:"){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));}</script></body></html>
