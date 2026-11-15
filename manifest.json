@@ -1,12 +1,12 @@
 {
-  "name": "MyFinance",
+  "name": "MyFinance 4.0.8 — Violet Glass",
   "short_name": "MyFinance",
-  "description": "Gestor financeiro pessoal privado",
+  "description": "MyFinance 4.0.8 Violet Glass — versão principal.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#0b1020",
-  "theme_color": "#0b1020",
+  "background_color": "#07090d",
+  "theme_color": "#07090d",
   "icons": [
     {
       "src": "icon-192.png",
