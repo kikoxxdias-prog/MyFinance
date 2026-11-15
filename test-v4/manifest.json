@@ -1,12 +1,12 @@
 {
-  "name": "MyFinance 4.0.2 — Teste Isolado",
-  "short_name": "MF 4.0.2",
-  "description": "Versão de teste isolada da MyFinance 2.1.",
+  "name": "MyFinance 4.0.6 — Obsidian Black",
+  "short_name": "MF 4.0.6",
+  "description": "Redesign Obsidian Black da MyFinance, versão de teste isolada.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#050a10",
-  "theme_color": "#050a10",
+  "background_color": "#07090d",
+  "theme_color": "#07090d",
   "icons": [
     {
       "src": "icon-192.png",
